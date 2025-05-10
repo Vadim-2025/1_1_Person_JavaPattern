@@ -23,7 +23,7 @@ public class Person {
     }
 
     public boolean hasAddress() {
-        return getAddress() != null;
+        return address != null;
     }
 
     public String getName() {
@@ -35,15 +35,16 @@ public class Person {
     }
 
     public OptionalInt getAge() {
-        return age < 0 ? OptionalInt.empty() : OptionalInt.of(age);
+        return OptionalInt.of(age);
     }
 
     public String getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public String setAddress(String address) {
         this.address = address;
+        return this.address;
     }
 
     public void happyBirthday() {
